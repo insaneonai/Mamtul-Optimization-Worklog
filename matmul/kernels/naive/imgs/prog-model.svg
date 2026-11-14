@@ -1,0 +1,124 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="510" viewBox="0 0 1120 510">
+  <defs>
+    <marker id="axis" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6" fill="#3b82f6"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="470" fill="#fff"/>
+
+
+  <!-- GRID -->
+  <g font-family="Arial, sans-serif">
+    <text x="235" y="38" font-size="24" font-weight="bold" fill="#a78bfa" text-anchor="middle">GRID</text>
+    <text x="235" y="65" font-size="15" fill="currentColor" text-anchor="middle">gridDim = (4, 3)</text>
+
+    <!-- 4 x 3 blocks -->
+    <g stroke="#a78bfa" stroke-width="2">
+      <rect x="85" y="105" width="300" height="225" fill="none"/>
+      <!-- Vertical divisions -->
+      <path d="M160 105 V330 M235 105 V330 M310 105 V330"/>
+      <!-- Horizontal divisions -->
+      <path d="M85 180 H385 M85 255 H385"/>
+    </g>
+
+
+    <!-- Highlight block (1,1) -->
+    <rect x="160" y="180" width="75" height="75" fill="#a78bfa" fill-opacity="0.3" stroke="#c4b5fd" stroke-width="3"/>
+
+    <!-- Block indices -->
+    <g font-size="15" fill="currentColor" text-anchor="middle">
+      <text x="122" y="148"> (0,0)</text>
+      <text x="197" y="148">(1,0)</text>
+      <text x="272" y="148">(2,0)</text>
+      <text x="347" y="148">(3,0)</text>
+      <text x="122" y="223">(0,1)</text>
+      <text x="197" y="223" font-weight="bold" fill="#c4b5fd">(1,1)</text>
+      <text x="272" y="223">(2,1)</text>
+      <text x="347" y="223">(3,1)</text>
+      <text x="122" y="298">(0,2)</text>
+      <text x="197" y="298">(1,2)</text>
+      <text x="272" y="298">(2,2)</text>
+      <text x="347" y="298">(3,2)</text>
+    </g>
+
+    <!-- Grid axes -->
+    <g stroke="#3b82f6" stroke-width="2.5" fill="none" marker-end="url(#axis)">
+      <path d="M85 355 H385"/>
+      <path d="M65 105 V330"/>
+    </g>
+    <g fill="#3b82f6" font-size="16" font-weight="bold">
+      <text x="392" y="360">+X</text>
+      <text x="48" y="345">+Y</text>
+    </g>
+    <g fill="currentColor" font-size="14">
+      <text x="235" y="390" text-anchor="middle">blockIdx.x →</text>
+      <text x="20" y="220" transform="rotate(-90 20 220)" text-anchor="middle">blockIdx.y →</text>
+    </g>
+    <text x="235" y="425" font-size="15" fill="#a78bfa" text-anchor="middle">Highlighted block: blockIdx = (1, 1)</text>
+  </g>
+
+  <!-- BLOCK -->
+  <g font-family="Arial, sans-serif">
+    <text x="680" y="38" font-size="24" font-weight="bold" fill="#fb923c" text-anchor="middle">BLOCK</text>
+    <text x="680" y="65" font-size="15" fill="currentColor" text-anchor="middle">blockDim = (4, 3)</text>
+
+    <!-- 4 x 3 threads -->
+    <g stroke="#fb923c" stroke-width="2">
+      <rect x="530" y="105" width="300" height="225" fill="none"/>
+      <path d="M605 105 V330 M680 105 V330 M755 105 V330"/>
+      <path d="M530 180 H830 M530 255 H830"/>
+    </g>
+
+    <!-- Highlight thread (2,1) -->
+    <rect x="680" y="180" width="75" height="75" fill="#fb923c" fill-opacity="0.35" stroke="#fdba74" stroke-width="3"/>
+
+    <!-- Thread indices -->
+    <g font-size="15" fill="currentColor" text-anchor="middle">
+      <text x="567" y="148">(0,0)</text>
+      <text x="642" y="148">(1,0)</text>
+      <text x="717" y="148">(2,0)</text>
+      <text x="792" y="148">(3,0)</text>
+      <text x="567" y="223">(0,1)</text>
+      <text x="642" y="223">(1,1)</text>
+      <text x="717" y="223" font-weight="bold" fill="#fdba74">(2,1)</text>
+      <text x="792" y="223">(3,1)</text>
+      <text x="567" y="298">(0,2)</text>
+      <text x="642" y="298">(1,2)</text>
+      <text x="717" y="298">(2,2)</text>
+      <text x="792" y="298">(3,2)</text>
+    </g>
+
+    <!-- Block axes -->
+    <g stroke="#3b82f6" stroke-width="2.5" fill="none" marker-end="url(#axis)">
+      <path d="M530 355 H830"/>
+      <path d="M510 105 V330"/>
+    </g>
+    <g fill="#3b82f6" font-size="16" font-weight="bold">
+      <text x="837" y="360">+X</text>
+      <text x="493" y="345">+Y</text>
+    </g>
+    <g fill="currentColor" font-size="14">
+      <text x="680" y="390" text-anchor="middle">threadIdx.x →</text>
+      <text x="465" y="220" transform="rotate(-90 465 220)" text-anchor="middle">threadIdx.y →</text>
+    </g>
+    <text x="680" y="425" font-size="15" fill="#fb923c" text-anchor="middle">Highlighted thread: threadIdx = (2, 1)</text>
+  </g>
+
+  <!-- THREAD -->
+  <g font-family="Arial, sans-serif">
+    <text x="980" y="38" font-size="24" font-weight="bold" fill="#fb923c" text-anchor="middle">THREAD</text>
+    <rect x="900" y="115" width="160" height="150" rx="12" fill="#fb923c" fill-opacity="0.12" stroke="#fb923c" stroke-width="2"/>
+    <circle cx="980" cy="170" r="25" fill="#fb923c" fill-opacity="0.35" stroke="#fb923c" stroke-width="2"/>
+    <text x="980" y="176" text-anchor="middle" font-size="15" fill="currentColor">T</text>
+    <text x="980" y="220" text-anchor="middle" font-size="15" fill="currentColor">One execution</text>
+    <text x="980" y="240" text-anchor="middle" font-size="15" fill="currentColor">context</text>
+    <text x="980" y="310" text-anchor="middle" font-size="14" fill="currentColor">Executes instructions</text>
+  </g>
+
+  <!-- Relationship -->
+  <g font-family="Arial, sans-serif" fill="currentColor" font-size="14">
+    <text x="560" y="480" text-anchor="middle">Grid contains blocks → Each block contains threads</text>
+  </g>
+</svg>
